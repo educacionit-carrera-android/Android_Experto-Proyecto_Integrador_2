@@ -34,7 +34,7 @@ class LoginPresenterImp(
         view.hideLoading()
     }
 
-    private fun dataIsCorrect(user: User): Boolean {
+    fun dataIsCorrect(user: User): Boolean {
         return user.email.trim().length >= 2 &&
                 user.password.trim().length >= 2
     }
