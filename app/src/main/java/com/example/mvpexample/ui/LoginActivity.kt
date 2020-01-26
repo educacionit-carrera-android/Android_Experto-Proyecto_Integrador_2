@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mvpexample.R
 import com.example.mvpexample.data.UserResponse
 import com.example.mvpexample.io.UserApi
+import com.example.mvpexample.io.UserApiImp
 import com.example.mvpexample.model.LoginRepositoryImp
 import com.example.mvpexample.presenter.LoginPresenter
 import com.example.mvpexample.presenter.LoginPresenterImp
@@ -47,7 +48,7 @@ class LoginActivity : AppCompatActivity(), LoginActivityView {
     private fun createPresenter() {
         presenter = LoginPresenterImp(
             this,
-            LoginRepositoryImp(UserApi())
+            LoginRepositoryImp(UserApiImp())
         )
     }
 

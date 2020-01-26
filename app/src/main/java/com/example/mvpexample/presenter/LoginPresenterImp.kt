@@ -14,7 +14,7 @@ class LoginPresenterImp(
         view.disableLoginButton()
         val user = User(email, password)
         if (dataIsCorrect(user)) {
-            model.login(
+            model.login(user,
                 {
                     view.hideLoading()
                     view.goToNextScreen(it)
