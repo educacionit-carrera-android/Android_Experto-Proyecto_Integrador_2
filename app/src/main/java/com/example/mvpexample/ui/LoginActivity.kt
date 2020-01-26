@@ -1,5 +1,6 @@
 package com.example.mvpexample.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -7,9 +8,9 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mvpexample.HomeActivity
 import com.example.mvpexample.R
 import com.example.mvpexample.data.UserResponse
-import com.example.mvpexample.io.UserApi
 import com.example.mvpexample.io.UserApiImp
 import com.example.mvpexample.model.LoginRepositoryImp
 import com.example.mvpexample.presenter.LoginPresenter
@@ -73,7 +74,9 @@ class LoginActivity : AppCompatActivity(), LoginActivityView {
     }
 
     override fun goToNextScreen(user: UserResponse) {
-        Toast.makeText(this, "Bienvenido ${user.firstName}", Toast.LENGTH_LONG).show()
-        //Mostrar siguiente pantalla
+        //Toast.makeText(this, "Bienvenido ${user.firstName}", Toast.LENGTH_LONG).show()
+
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
     }
 }
