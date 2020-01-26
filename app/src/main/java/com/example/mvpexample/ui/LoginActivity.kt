@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mvpexample.BuildConfig
 import com.example.mvpexample.HomeActivity
 import com.example.mvpexample.R
 import com.example.mvpexample.data.UserResponse
@@ -44,6 +45,12 @@ class LoginActivity : AppCompatActivity(), LoginActivityView {
                 etPassword.text.toString()
             )
         }
+
+        /*if (BuildConfig.SHOW_ADMIN_BUTTON) {
+            btnLogin.visibility = View.VISIBLE
+        } else {
+            btnLogin.visibility = View.GONE
+        }*/
     }
 
     private fun createPresenter() {
